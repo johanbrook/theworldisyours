@@ -1,0 +1,66 @@
+name: Build and deploy
+
+on:
+    push:
+        branches:
+            - "main"
+
+        paths:
+            - "src/**/*"
+            - "_config.ts"
+            - "CNAME"
+            - ".github/workflows/deploy.yml"
+    # Allows you to run this workflow manually from the Actions tab
+    workflow_dispatch:
+
+# Sets permissions of the GITHUB_TOKEN to allow deployment to GitHub Pages
+permissions:
+    contents: read  # to checkout repo
+    pages: write    # to deploy to Pages
+    id-token: write # to verify the deployment originates from an appropriate source
+
+# Allow only one concurrent deployment, skipping runs queued between the run in-progress and latest queued.
+# However, do NOT cancel in-progress runs as we want to allow these production deployments to complete.
+concurrency:
+    group: "pages"
+    cancel-in-progress: false
+
+env:
+    DENO_VERSION: v1.43.5
+    BUILD_FOLDER: _site
+
+jobs:
+    build:
+        name: Build
+        runs-on: ubuntu-latest
+        steps:
+            - name: Checkout code
+              uses: actions/checkout@v4
+
+            - name: Setup Deno
+              uses: denoland/setup-deno@v1
+              with:
+                  deno-version: ${{ env.DENO_VERSION }}
+
+            - name: Build site
+              run: deno task build
+              env:
+                NODE_ENV: production
+                ENV: production
+
+            - name: Upload artifact
+              uses: actions/upload-pages-artifact@v3
+              with:
+                  path: ${{ env.BUILD_FOLDER }}
+
+    deploy:
+        name: Deploy
+        needs: build
+        runs-on: ubuntu-latest
+        environment:
+            name: github-pages
+            url: ${{ steps.deployment.outputs.page_url }}
+        steps:
+            - name: Deploy to GitHub Pages
+              id: deployment
+              uses: actions/deploy-pages@v4
