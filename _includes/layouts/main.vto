@@ -1,0 +1,36 @@
+<!doctype html>
+<html>
+    <head>
+        <title>{{ title }} — {{ subtitle }}</title>
+        
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+        <link href="/style.css" rel="stylesheet" />
+        <link rel="alternate" type="application/rss+xml" title="Subscribe to our posts feed" href="/feed.xml" />
+        
+        <link rel="canonical" href="{{ url |> url(true) }}" />
+        <meta name="author" content="Johan & Clara Brook" />
+    </head>
+    <body>
+        <nav aria-label="Main navigation">
+            <ul>
+                <li {{- if url == "/" }} aria-current="page"{{ /if }}>
+                    <a href="/">Alla inlägg</a>
+                </li >
+                <li {{- if url == "/about/" }} aria-current="page"{{ /if }}>
+                    <a href="/about">Om oss</a>
+                </li>
+                <li>
+                    <a href="/feed.xml">Prenumerera</a>
+                </li>
+            </ul>
+        </nav >
+        <main>
+            {{ content }}
+            
+            <footer role="contentinfo">
+                <a href="https://open.spotify.com/track/7G3lxTsMfSx4yarMkfgnTC">The World Is Yours</a>
+            </footer>
+        </main>
+    </body>
+</html>

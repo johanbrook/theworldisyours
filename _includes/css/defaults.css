@@ -1,0 +1,61 @@
+/* =ELEMENTS
+--------------------------------------------- */
+
+html {
+    font: normal 112.5% / var(--leading) var(--sans);
+
+    @media only screen and (max-width: 480px) {
+        font-size: 100%;
+    }
+}
+
+:where(body, html) {
+    background-color: var(--color-bg);
+}
+
+body {
+    color: var(--color-text);
+    font-variant-ligatures: contextual common-ligatures;
+    hanging-punctuation: first;
+    margin-inline: 0.25rlh;
+}
+
+input,
+textarea {
+    hanging-punctuation: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+nav {
+    [aria-current="page"] {
+        :where(a, a:hover) {
+            cursor: default;
+            font-weight: 600;
+            text-decoration: inherit;
+        }
+    }
+}
+
+article :not(header > *):where(h1, h2, h3, h4, p, blockquote, hr, figure):not(:last-child) {
+    margin-block-end: 1rlh;
+}
+
+main > [role="contentinfo"] {
+    font-size: var(--f-small);
+    text-align: center;
+}
+
+a {
+    text-underline-offset: 3px;
+
+    &:hover {
+        text-decoration-style: wavy;
+        text-decoration-thickness: 2px;
+        text-decoration-color: var(--accent);
+    }
+}

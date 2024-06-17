@@ -1,0 +1,24 @@
+---
+layout: layouts/main.vto
+---
+
+<article class="Post">
+    <header>
+        <h1>{{ title }}</h1>
+        <p>
+            <time datetime="{{ date |> date("ATOM") }}" pubdate>{{ date |> date("HUMAN_DATE")}}</time><span class="author">— {{ author }}</span >
+        </p>
+    </header>
+
+    {{ content }}
+
+    <footer>
+        <nav>
+            {{ set post = search.previousPage(url, "type=post") }} {{ if post }}
+            <a href="{{ post.url }}" rel="prev">← {{ post.title }}</a >
+            {{ /if }} {{ set post = search.nextPage(url, "type=post") }} {{ if post }}
+            <a href="{{ post.url }}" rel="next">{{ post.title }} →</a>
+            {{ /if }}
+        </nav>
+    </footer>
+</article>

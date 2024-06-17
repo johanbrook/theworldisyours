@@ -1,0 +1,22 @@
+<header class="HomeHeader">
+    <h1>{{ title }}</h1>
+    <p>{{ subtitle }}</p>
+</header >
+
+<div class="PostList h-feed">
+    {{ for post of search.pages("type=post", "date=desc")}}
+    <article class="Post h-entry">
+        <header>
+            <h1>
+                <a href="{{ post.url }}" class="u-url">{{ post.title }}</a>
+            </h1>
+            <p>
+                <time datetime="{{ post.date |> date("ATOM") }}" class="dt-published" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
+                <span class="author">— {{ post.author }}</span>
+            </p>
+        </header>
+
+        <div class="e-content">{{ post.content |> md }}</div>
+    </article>
+    {{ /for }}
+</div>

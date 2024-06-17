@@ -1,0 +1,23 @@
+body {
+    margin-inline: auto;
+    padding-inline: 2%;
+    padding-block: 2rlh;
+    max-width: var(--content-width);
+}
+
+article > header {
+    margin-block-end: 0.5rlh;
+}
+
+nav {
+    margin-block-end: 1rlh;
+
+    > ul {
+        display: flex;
+        gap: 2em;
+    }
+}
+
+main > [role="contentinfo"] {
+    margin-block: 1rlh;
+}

@@ -1,0 +1,52 @@
+.PostList {
+    > article {
+        margin-block-end: 2rlh;
+
+        header {
+            h1 {
+                font-size: 1.5rem;
+            }
+        }
+    }
+}
+
+.Post {
+    header {
+        p {
+            font-size: var(--f-small);
+            display: flex;
+            justify-content: space-between;
+
+            time {
+                color: var(--gray);
+            }
+        }
+
+        .author {
+            font-weight: 560;
+        }
+    }
+
+    footer nav {
+        display: flex;
+        justify-content: space-between;
+    }
+}
+
+.HomeHeader {
+    margin-block-end: 2rlh;
+
+    h1 {
+        margin-block-end: 0.25rlh;
+        font-size: 2.75rem;
+        font-weight: 630;
+        letter-spacing: -0.01em;
+    }
+
+    /* Subtitle */
+    p {
+        color: var(--gray);
+        font-size: 1.5rem;
+        font-weight: 380;
+    }
+}

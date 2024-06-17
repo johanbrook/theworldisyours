@@ -1,0 +1,21 @@
+:root {
+    /* TYPOGRAPHY */
+
+    --leading: 1.6;
+    --sans: system-ui, sans-serif;
+    --serif: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+    --f-small: 0.85rem;
+
+    /* LAYOUT */
+
+    --content-width: 65ch;
+
+    /* COLOURS */
+
+    --gray: #555;
+    --accent: oklch(77.6% 0.185 74.12);
+    
+    @media (prefers-color-scheme: dark) {
+        --gray: #aaa;
+    }
+}
