@@ -5,16 +5,23 @@ import feed from "lume/plugins/feed.ts";
 import jsx_preact from "lume/plugins/jsx_preact.ts";
 import postcss from "lume/plugins/postcss.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
+import basePath from "lume/plugins/base_path.ts";
 
-const site = lume();
+const site = lume({
+    location: new URL("https://johanbrook.github.io/theworldisyours"),
+});
 
-site.use(
-    date({
-        locales: { sv },
-    }),
-)
+site
+    //
     .copy("public", ".")
     .copy("uploads", "uploads")
+
+    .use(
+        date({
+            locales: { sv },
+        }),
+    )
+    .use(basePath()) // XXX Remove later
     .use(slugifyUrls())
     .use(
         feed({
