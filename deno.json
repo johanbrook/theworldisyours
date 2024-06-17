@@ -8,12 +8,11 @@
         "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
         "build": "deno task lume",
         "serve": "deno task lume -s",
-        "cms": "deno task lume cms"
+        "cms": "deno task lume cms",
+        "deploy": "deployctl deploy --prod"
     },
     "compilerOptions": {
         "types": ["lume/types.ts"],
-        "jsx": "precompile",
-        "jsxImportSource": "npm:preact",
         "strict": true
     },
     "fmt": {
@@ -21,8 +20,12 @@
         "lineWidth": 120,
         "singleQuote": true,
         "indentWidth": 4,
-        "exclude": [
-            "./_site"
-        ]
+        "exclude": ["./_site"]
+    },
+    "deploy": {
+        "project": "d6d6f641-c1b3-4c21-9dee-4b84da0511ec",
+        "exclude": ["_site", ".env", "public", "**/node_modules", ".github", "**/node_modules"],
+        "include": [],
+        "entrypoint": "_cms.ts"
     }
 }

@@ -15,7 +15,7 @@ const storageOf = (path: string) => `${!githubToken ? "src:" : "gh:src/"}${path}
 const cms = lumeCMS({
     site: {
         name: "Familjen Brooks reseblogg",
-        url: "TODO",
+        url: "https://johanbrook.github.io/theworldisyours", // XXX
     },
     auth: {
         method: "basic",
@@ -31,7 +31,7 @@ if (githubToken) {
         new GitHub({
             client: new Octokit({ auth: githubToken }),
             owner: "johanbrook",
-            repo: "XXX",
+            repo: "theworldisyours",
         }),
     );
 }
