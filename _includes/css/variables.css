@@ -3,7 +3,9 @@
 
     --leading: 1.6;
     --sans: system-ui, sans-serif;
-    --serif: "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+    --mono: ui-monospace, monospace;
+
     --f-small: 0.85rem;
 
     /* LAYOUT */

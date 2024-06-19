@@ -20,6 +20,10 @@ body {
     margin-inline: 0.25rlh;
 }
 
+:where(code, kbd, pre) {
+    font-family: var(--mono);
+}
+
 input,
 textarea {
     hanging-punctuation: none;
@@ -48,6 +52,7 @@ article :not(header > *):where(h1, h2, h3, h4, p, blockquote, hr, figure):not(:l
 main > [role="contentinfo"] {
     font-size: var(--f-small);
     text-align: center;
+    font-variation-settings: "opsz" 21;
 }
 
 a {
