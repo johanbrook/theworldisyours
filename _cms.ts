@@ -1,5 +1,6 @@
 import lumeCMS from "lume/cms/mod.ts";
 import GitHub from "lume/cms/storage/github.ts";
+import Fs from "lume/cms/storage/fs.ts";
 import { Octokit } from "npm:octokit";
 
 const githubToken = Deno.env.get("LUME_CMS_GITHUB_TOKEN");
@@ -16,9 +17,10 @@ if (githubToken) {
     console.log("Using file system as storage");
 }
 
-const storageOf = (path: string) => `${!githubToken ? "src:" : "gh:src/"}${path}`;
+const storageOf = (path: string) => `${!githubToken ? "fs:" : "gh:"}${path}`;
 
 const cms = lumeCMS({
+    root: Deno.cwd(),
     site: {
         name: "Familjen Brooks reseblogg",
         url: "https://johanbrook.github.io/theworldisyours", // XXX
@@ -38,6 +40,13 @@ if (githubToken) {
             client: new Octokit({ auth: githubToken }),
             owner: "johanbrook",
             repo: "theworldisyours",
+        }),
+    );
+} else {
+    cms.storage(
+        "fs",
+        new Fs({
+            root: Deno.cwd(),
         }),
     );
 }
