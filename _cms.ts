@@ -10,6 +10,12 @@ if (!adminPw) {
     Deno.exit(1);
 }
 
+if (githubToken) {
+    console.log("Using GitHub as storage");
+} else {
+    console.log("Using file system as storage");
+}
+
 const storageOf = (path: string) => `${!githubToken ? "src:" : "gh:src/"}${path}`;
 
 const cms = lumeCMS({
