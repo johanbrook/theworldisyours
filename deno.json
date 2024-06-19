@@ -24,8 +24,7 @@
     },
     "deploy": {
         "project": "d6d6f641-c1b3-4c21-9dee-4b84da0511ec",
-        "exclude": ["_site", ".env", "public", "**/node_modules", ".github", "**/node_modules"],
-        "include": [],
+        "include": ["deno.json", "deno.lock", "_cms.ts", "_config.ts"],
         "entrypoint": "_cms.ts"
     }
 }
