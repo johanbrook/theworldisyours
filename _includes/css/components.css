@@ -13,7 +13,6 @@
 .Post {
     header {
         p {
-            font-size: var(--f-small);
             display: flex;
             justify-content: space-between;
             font-variation-settings: "opsz" 21;
