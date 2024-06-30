@@ -18,9 +18,15 @@
     li {
         display: grid;
         grid-template-columns: 1fr min-content;
+        margin-block: 0.25rlh 0.25rlh;
+        gap: 1rlh;
 
         > a {
             font-weight: 500;
+            max-width: 100%;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            white-space: nowrap;
         }
 
         time {
