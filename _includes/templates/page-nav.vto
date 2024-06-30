@@ -1,0 +1,15 @@
+<nav class="PageNav">
+    <p>
+        {{ if pagination.previous }}
+        <a href="{{ pagination.previous }}" class="btn">← Föregående</a>
+        {{ /if }}
+    </p>
+    <p>
+        <a href="/archive" class="btn">Visa alla inlägg</a>
+    </p>
+    <p>
+        {{ if pagination.next }}
+        <a href="{{ pagination.next }}" class="btn">Nästa →</a>
+        {{ /if }}
+    </p>
+</nav>

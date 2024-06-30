@@ -3,9 +3,12 @@ body {
     padding-inline: 2%;
     padding-block: 0.5rlh;
     max-width: var(--content-width);
+    
+    display: grid;
+    grid-template-rows: min-content 1fr min-content;
 
     @media only screen and (min-width: 706px) {
-        padding-block: 2rlh;
+        padding-block: 2rlh 1rlh;
     }
 }
 
@@ -27,6 +30,6 @@ nav {
     }
 }
 
-main > [role="contentinfo"] {
-    margin-block: 1rlh;
+[role="contentinfo"] {
+    margin-block: 2rlh 1rlh;
 }

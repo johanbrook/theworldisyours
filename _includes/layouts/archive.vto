@@ -1,0 +1,11 @@
+---
+layout: layouts/main.vto
+---
+
+<p class="muted tr spacing detail">{{ pagination.totalResults }} inlägg</p >
+
+{{ include "templates/post-list.vto" { posts: results } }}
+
+{{ if pagination.totalPages > 1 }}
+    {{ include "templates/page-nav.vto" { pagination: pagination } }}
+{{ /if }}

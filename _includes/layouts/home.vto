@@ -1,10 +1,14 @@
+---
+layout: layouts/main.vto
+---
+
 <header class="HomeHeader">
     <h1>{{ title }}</h1>
     <p>{{ subtitle }}</p>
 </header >
 
 <div class="PostList h-feed">
-    {{ for post of search.pages("type=post", "date=desc")}}
+    {{ for post of results }}
     <article class="Post h-entry">
         <header>
             <h1>
@@ -20,3 +24,7 @@
     </article>
     {{ /for }}
 </div>
+
+{{ if pagination.totalPages > 1 }}
+    {{ include "templates/page-nav.vto" { pagination: pagination } }}
+{{ /if }}

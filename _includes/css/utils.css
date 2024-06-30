@@ -1,0 +1,15 @@
+.muted {
+    color: var(--gray);
+}
+
+.tr {
+    text-align: right;
+}
+
+.spacing {
+    margin-block-end: 1rlh;
+}
+
+.detail {
+    font-size: var(--f-small);
+}
