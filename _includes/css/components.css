@@ -47,11 +47,6 @@
             font-weight: 560;
         }
     }
-
-    footer nav {
-        display: flex;
-        justify-content: space-between;
-    }
 }
 
 .HomeHeader {
@@ -73,6 +68,7 @@
 }
 
 .btn {
+    display: inline-block;
     font-weight: 440;
     padding: 0.5em 1em;
     border-radius: 4px;
@@ -92,6 +88,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     text-align: center;
+    gap: 0.5rlh;
 
     :last-child:first-child {
         grid-column: 2;

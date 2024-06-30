@@ -13,12 +13,24 @@ layout: layouts/main.vto
     {{ content }}
 
     <footer>
-        <nav>
-            {{ set post = search.previousPage(url, "type=post") }} {{ if post }}
-            <a href="{{ post.url }}" rel="prev">← {{ post.title }}</a >
-            {{ /if }} {{ set post = search.nextPage(url, "type=post") }} {{ if post }}
-            <a href="{{ post.url }}" rel="next">{{ post.title }} →</a>
+        <nav class="PageNav">
+            {{ set post = search.previousPage(url, "type=post") }}
+            <p>
+                {{ if post }}
+                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="prev">← Föregående</a >
+            </p>
             {{ /if }}
+            
+            <p>
+                <a href="/archive" class="btn">Visa alla inlägg</a>
+            </p>
+            
+            {{ set post = search.nextPage(url, "type=post") }}
+            <p>
+            {{ if post }}
+                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="next">Nästa →</a >
+            {{ /if }}
+            </p>
         </nav>
     </footer>
 </article>
