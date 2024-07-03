@@ -7,7 +7,7 @@ layout: layouts/main.vto
     <p>{{ subtitle }}</p>
 </header >
 
-<div class="PostList h-feed">
+<div class="PostList h-feed" transform-images="{{ image_transform_attr }}">
     {{ for post of results }}
     <article class="Post h-entry">
         <header>

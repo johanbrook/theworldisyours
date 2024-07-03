@@ -1,2 +1,11 @@
 title: "“The world is yours”"
 subtitle: "Familjen Brooks reseblogg"
+
+image_transform_attr: "avif jpg 676@2"
+
+metas:
+    title: "=title"
+    author: "=author"
+    description: "=subtitle"
+    lang: sv
+    site: "“The world is yours”"

@@ -6,6 +6,9 @@ import jsx_preact from "lume/plugins/jsx_preact.ts";
 import postcss from "lume/plugins/postcss.ts";
 import slugifyUrls from "lume/plugins/slugify_urls.ts";
 import basePath from "lume/plugins/base_path.ts";
+import picture from "lume/plugins/picture.ts";
+import transformImages from "lume/plugins/transform_images.ts";
+import metas from "lume/plugins/metas.ts";
 
 const site = lume({
     location: new URL("https://johanbrook.github.io/theworldisyours"),
@@ -14,7 +17,9 @@ const site = lume({
 site
     //
     .copy("public", ".")
-    .copy("uploads", "uploads")
+
+    .use(picture())
+    .use(transformImages())
 
     .use(
         date({
@@ -23,6 +28,7 @@ site
     )
     .use(basePath()) // XXX Remove later
     .use(slugifyUrls())
+    .use(metas())
     .use(
         feed({
             output: "/feed.xml",
