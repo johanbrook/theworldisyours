@@ -36,7 +36,7 @@ site
             info: {
                 title: "=title",
                 description: "=subtitle",
-                lang: "sv",
+                lang: "=metas.lang",
                 generator: false,
             },
         }),
