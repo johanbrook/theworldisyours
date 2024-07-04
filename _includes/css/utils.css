@@ -13,3 +13,13 @@
 .detail {
     font-size: var(--f-small);
 }
+
+.icon {
+    fill: currentColor;
+    width: 1em;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    vertical-align: middle;
+    display: inline-block;
+    font-size: 0.9em;
+}

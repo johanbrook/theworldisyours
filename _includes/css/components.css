@@ -59,8 +59,8 @@
     margin-block-end: 2rlh;
 
     h1 {
-        margin-block-end: 0.25rlh;
-        font-size: 2.75rem;
+        margin-block-end: 0;
+        font-size: var(--fluid-24-50);
         font-weight: 580;
         letter-spacing: -0.01em;
     }
@@ -68,7 +68,7 @@
     /* Subtitle */
     p {
         color: var(--gray);
-        font-size: 1.5rem;
+        font-size: var(--fluid-16-27);
         font-weight: 380;
     }
 }
@@ -98,5 +98,25 @@
 
     :last-child:first-child {
         grid-column: 2;
+    }
+}
+
+.MainNav {
+    & > ul {
+        gap: 1.5em;
+    }
+
+    a > :last-child {
+        display: none;
+    }
+
+    @media (max-width: 560px) {
+        a > :last-child {
+            display: revert-layer;
+        }
+
+        a > :first-child {
+            display: none;
+        }
     }
 }
