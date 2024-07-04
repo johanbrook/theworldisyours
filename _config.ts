@@ -11,7 +11,7 @@ import transformImages from "lume/plugins/transform_images.ts";
 import metas from "lume/plugins/metas.ts";
 
 const site = lume({
-    location: new URL("https://johanbrook.github.io/theworldisyours"),
+    location: new URL("https://brook.city"),
 });
 
 site

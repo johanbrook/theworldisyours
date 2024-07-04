@@ -23,7 +23,7 @@ const cms = lumeCMS({
     root: Deno.cwd(),
     site: {
         name: "Familjen Brooks reseblogg",
-        url: "https://johanbrook.github.io/theworldisyours", // XXX
+        url: "https://brook.city",
     },
     auth: {
         method: "basic",
