@@ -1,8 +1,12 @@
-@import "css/reset.css";
-@import "css/variables.css";
+@layer reset, setup, theme, utils;
 
-@import "css/defaults.css";
-@import "css/layout.css";
+@import "css/reset.css" layer(reset);
 
-@import "css/components.css";
-@import "css/utils.css";
+@import "css/variables.css" layer(setup);
+@import "css/defaults.css" layer(setup);
+@import "css/layout.css" layer(setup);
+
+@import "css/components.css" layer(setup);
+@import "css/utils.css" layer(utils);
+
+@import "css/themes/south-africa.css" layer(theme);

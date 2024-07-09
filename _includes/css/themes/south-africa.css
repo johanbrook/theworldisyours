@@ -1,0 +1,63 @@
+/* South Africa theme */
+
+@font-face {
+    font-family: Bayon;
+    src:
+        url("/fonts/bayon-regular-webfont.woff2") format("woff2"),
+        url("/fonts/bayon-regular-webfont.woff") format("woff");
+    font-weight: normal;
+    font-style: normal;
+}
+
+:root {
+    --yellow: oklch(88.53% 0.118 79.54);
+    --accent: oklch(68.4% 0.201 28.59);
+    --muted: color-mix(in oklab, var(--yellow), black 52%);
+
+    --fluid-24-65: clamp(1.5rem, -2.3886rem + 15.9533vi, 4.0625rem);
+}
+
+html {
+    background-color: var(--yellow);
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --_bg-color: oklch(25% 0.03 79.54);
+        --muted: color-mix(in oklab, var(--yellow), var(--_bg-color) 20%);
+    }
+
+    html {
+        background-color: var(--_bg-color);
+        color: var(--yellow);
+    }
+}
+
+@media (prefers-color-scheme: light) {
+    article > header h1 {
+        font-weight: 630;
+    }
+}
+
+:where(.MainNav, .HomeHeader) {
+    text-align: center;
+}
+
+.MainNav ul {
+    justify-content: center;
+}
+
+.HomeHeader {
+    h1 {
+        font-family: Bayon, var(--sans);
+        font-size: var(--fluid-24-65);
+    }
+
+    p {
+        font-weight: 800;
+        text-transform: uppercase;
+        font-size: 1.2rem;
+        color: inherit;
+        letter-spacing: 0.05em;
+    }
+}

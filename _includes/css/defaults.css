@@ -9,7 +9,7 @@ html {
     font-family: var(--sans);
 
     /* 3. Larger on larger screens. */
-    @media only screen and (min-width: 800px) {
+    @media only screen and (min-width: 600px) {
         font-size: 112.5%;
     }
 }

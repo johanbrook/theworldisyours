@@ -32,7 +32,7 @@
         time {
             white-space: nowrap;
             text-align: right;
-            color: var(--gray);
+            color: var(--muted);
         }
     }
 }
@@ -45,7 +45,7 @@
             font-variation-settings: "opsz" 21;
 
             time {
-                color: var(--gray);
+                color: var(--muted);
             }
         }
 
@@ -67,7 +67,7 @@
 
     /* Subtitle */
     p {
-        color: var(--gray);
+        color: var(--muted);
         font-size: var(--fluid-16-27);
         font-weight: 380;
     }
