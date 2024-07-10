@@ -67,3 +67,8 @@ a {
         text-decoration-color: var(--accent);
     }
 }
+
+h1 {
+    font-weight: 550;
+    font-size: 2rem;
+}

@@ -2,10 +2,13 @@
 layout: layouts/main.vto
 ---
 
-<p class="muted tr spacing detail">{{ pagination.totalResults }} inlägg</p >
+<header class="split spacing">
+    <h1>{{ title }}</h1>
+    <p class="muted tr detail">{{ results.length }}{{ if pagination }} / {{ pagination.totalResults }}{{ /if }}</p>
+</header>
 
-{{ include "templates/post-list.vto" { posts: results } }}
+{{ include template { results: results } }}
 
-{{ if pagination.totalPages > 1 }}
+{{ if pagination?.totalPages > 1 }}
     {{ include "templates/page-nav.vto" { pagination: pagination } }}
 {{ /if }}

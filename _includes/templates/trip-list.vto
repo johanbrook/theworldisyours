@@ -1,0 +1,7 @@
+<ol class="ArchiveList h-feed">
+    {{ for trip of results }}
+    <li class="h-entry">
+        <a class="u-url" href="{{ trip |> to_slug }}">{{ trip }}</a>
+    </li>
+    {{ /for }}
+</ol>

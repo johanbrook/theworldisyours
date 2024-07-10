@@ -1,5 +1,9 @@
 export const layout = "layouts/archive.vto";
 
+export const template = "templates/post-list.vto";
+
+export const title = "Alla inlägg";
+
 export default function* ({ search, paginate }: Lume.Data) {
     const posts = search.pages("type=post", "date=desc");
     const options = {

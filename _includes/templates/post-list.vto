@@ -1,8 +1,8 @@
 <ol class="ArchiveList h-feed">
-    {{ for post of posts }}
+    {{ for post of results }}
     <li class="h-entry">
         <a class="u-url" href="{{ post.url }}">{{ post.title }}</a>
-        <time class="dt-published" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
+        <time class="dt-published ArchiveList__Meta" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
     </li>
     {{ /for }}
 </ol>
