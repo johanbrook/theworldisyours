@@ -45,6 +45,19 @@ site
     .data("layout", "layouts/main.vto")
     .data("type", "post", "/posts")
     .data("layout", "templates/post.vto", "/posts")
-    .filter("to_slug", slug);
+    .filter("to_slug", slug)
+    .process([".html"], (pages) => {
+        for (const page of pages) {
+            const document = page.document;
+
+            document?.querySelectorAll("img").forEach((img: HTMLElement) => {
+                img.setAttribute("decoding", "async");
+                img.setAttribute("loading", "lazy");
+                if (!img.hasAttribute("alt")) {
+                    console.warn(`The image ${img.getAttribute("src")} has not alternative text`);
+                }
+            });
+        }
+    });
 
 export default site;
