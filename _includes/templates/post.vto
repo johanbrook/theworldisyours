@@ -5,9 +5,18 @@ layout: layouts/main.vto
 <article class="Post" transform-images="{{ image_transform_attr }}">
     <header>
         <h1>{{ title }}</h1>
-        <p>
-            <time datetime="{{ date |> date("ATOM") }}" pubdate>{{ date |> date("HUMAN_DATE")}}</time><span class="author">— {{ author }}</span >
-        </p>
+        <div>
+            <p>
+                <time datetime="{{ date |> date("ATOM") }}" pubdate>{{ date |> date("HUMAN_DATE")}}</time>
+            </p>
+            
+            <p>
+                <span>Av {{ author }}</span>
+                {{ if trip }}
+                <span class="muted">·</span> Om <a href="/trips/{{ trip |> to_slug }}">{{ trip }}</a>
+                {{ /if }}
+            </p>
+        </div>
     </header>
 
     {{ content }}

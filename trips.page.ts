@@ -10,7 +10,10 @@ export default function* ({ search, paginate }: Lume.Data) {
         url: `/trips/`,
         title: "Resor",
         template: "templates/trip-list.vto",
-        results: search.values<string>("trip"),
+        results: search.values<string>("trip").map((t) => ({
+            title: t,
+            numPosts: search.pages(`type=post trip=${t}`).length,
+        })),
     };
 
     // Generate sub pages for all /trip/<trip> values containing a paginated list of posts for that trip
@@ -23,6 +26,10 @@ export default function* ({ search, paginate }: Lume.Data) {
             each: (p: any) => {
                 // The archive layout renders the title data variable
                 p.title = trip;
+                p.backLink = {
+                    url: "/trips",
+                    text: "Resor",
+                };
             },
         };
 

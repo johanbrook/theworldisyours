@@ -49,18 +49,15 @@
 
 .Post {
     header {
-        p {
+        h1 {
+            margin-block-end: 0.25rlh;
+        }
+
+        > div {
             display: flex;
             justify-content: space-between;
             font-variation-settings: "opsz" 21;
-
-            time {
-                color: var(--muted);
-            }
-        }
-
-        .author {
-            font-weight: 560;
+            color: var(--muted);
         }
     }
 }
@@ -97,6 +94,11 @@
 
     &:active {
         color: color-mix(in srgb, currentColor, transparent 30%);
+    }
+
+    &.btn-tight {
+        padding: 0.25em 0.5em;
+        font-size: var(--f-small);
     }
 }
 
