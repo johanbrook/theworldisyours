@@ -11,7 +11,7 @@
 
 :root {
     --yellow: oklch(95.1% 0.0522 79.54);
-    --green: rgb(2 119 73);
+    --green: oklch(57.06% 0.163 157.95);
 
     --accent: oklch(68.4% 0.201 28.59);
     --muted: color-mix(in oklab, var(--yellow), black 52%);
@@ -31,6 +31,7 @@ body {
     :root {
         --_bg-color: oklch(25% 0.03 79.54);
         --muted: color-mix(in oklab, var(--yellow), var(--_bg-color) 20%);
+        --green: oklch(85.59% 0.183 157.95);
     }
 
     html {
@@ -40,6 +41,12 @@ body {
 
     body {
         background-color: revert-layer;
+    }
+
+    :where(h1, h2, h3, h4, h5, h6) {
+        :where(&, & > a) {
+            color: white;
+        }
     }
 }
 

@@ -112,7 +112,10 @@
 }
 
 .MainNav {
+    margin-block-end: 2rlh;
+
     & > ul {
+        display: flex;
         gap: 1.5em;
     }
 
