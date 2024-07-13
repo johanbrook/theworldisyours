@@ -71,3 +71,13 @@ h1 {
     font-weight: 550;
     font-size: 2rem;
 }
+
+@media (hover: hover) {
+    time[title] {
+        cursor: help;
+        text-decoration: underline;
+        text-decoration-style: dotted;
+        text-underline-offset: 0.3ex;
+        text-decoration-thickness: 2px;
+    }
+}

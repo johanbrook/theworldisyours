@@ -2,7 +2,7 @@
     {{ for trip of results }}
     <li class="h-entry">
         <a class="u-url" href="{{ trip.title |> to_slug }}">{{ trip.title }}</a>
-        <span class="ArchiveList__Meta">{{ trip.numPosts }} inlägg</span>
+        <span class="ArchiveList__Meta">{{ if current_trip.trip == trip.title }}★ {{ /if }}{{ trip.numPosts }} inlägg</span>
     </li>
     {{ /for }}
 </ol>

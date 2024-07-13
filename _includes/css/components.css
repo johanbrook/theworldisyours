@@ -72,8 +72,7 @@
         letter-spacing: -0.01em;
     }
 
-    /* Subtitle */
-    p {
+    .HomeHeader__SubTitle {
         color: var(--muted);
         font-size: var(--fluid-16-27);
         font-weight: 380;

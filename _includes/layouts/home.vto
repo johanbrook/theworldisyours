@@ -3,8 +3,14 @@ layout: layouts/main.vto
 ---
 
 <header class="HomeHeader">
-    <h1>{{ title }}</h1>
-    <p>{{ subtitle }}</p>
+    <h1>{{ title |> split_letters }}</h1>
+    <p class="HomeHeader__SubTitle">{{ subtitle }}</p>
+    
+    {{ if current_trip }}
+        <p class="HomeHeader__CurrentTrip">
+            <time title="{{ build.date |> date }}">Just nu</time> skriver vi om <a href="/trips/{{ current_trip.trip |> to_slug }}">{{ current_trip.trip }}</a>
+        </p>
+    {{ /if }}
 </header >
 
 <div class="PostList h-feed" transform-images="{{ image_transform_attr }}">
@@ -14,10 +20,18 @@ layout: layouts/main.vto
             <h1>
                 <a href="{{ post.url }}" class="u-url">{{ post.title }}</a>
             </h1>
-            <p>
-                <time datetime="{{ post.date |> date("ATOM") }}" class="dt-published" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
-                <span class="author">— {{ post.author }}</span>
-            </p>
+            <div>
+                <p>
+                    <time datetime="{{ post.date |> date("ATOM") }}" class="dt-published" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
+                </p>
+                
+                <p>
+                    <span class="author">Av {{ post.author }}</span>
+                    {{ if post.trip }}
+                    <span class="muted">·</span> Om <a href="/trips/{{ post.trip |> to_slug }}">{{ post.trip }}</a>
+                    {{ /if }}
+                </p>
+            </div>
         </header>
 
         <div class="e-content">{{ post.content |> md }}</div>

@@ -10,33 +10,39 @@
 }
 
 :root {
-    --yellow: oklch(95.1% 0.0522 79.54);
+    --light: oklch(95.1% 0.0522 79.54);
     --green: oklch(57.06% 0.163 157.95);
+    --yellow: rgb(255 184 29);
 
     --accent: oklch(68.4% 0.201 28.59);
-    --muted: color-mix(in oklab, var(--yellow), black 52%);
+    --muted: color-mix(in oklab, var(--light), black 52%);
 
-    --fluid-24-65: clamp(1.5rem, -2.3886rem + 15.9533vi, 4.0625rem);
+    /* @link https://utopia.fyi/clamp/calculator?a=320,760,40—72 */
+    --fluid-title: clamp(2.5rem, 1.0455rem + 7.2727vi, 4.5rem);
 }
 
 html {
-    background-color: var(--yellow);
+    background-color: var(--light);
 }
 
 body {
     background-color: white;
 }
 
+h1:not(:has(> a)) {
+    font-size: 3rem;
+}
+
 @media (prefers-color-scheme: dark) {
     :root {
-        --_bg-color: oklch(25% 0.03 79.54);
-        --muted: color-mix(in oklab, var(--yellow), var(--_bg-color) 20%);
+        --bg-color: oklch(25% 0.03 79.54);
+        --muted: color-mix(in oklab, var(--light), var(--bg-color) 20%);
         --green: oklch(85.59% 0.183 157.95);
     }
 
     html {
-        background-color: var(--_bg-color);
-        color: var(--yellow);
+        background-color: var(--bg-color);
+        color: var(--light);
     }
 
     body {
@@ -67,14 +73,71 @@ body {
 .HomeHeader {
     h1 {
         font-family: Bayon, var(--sans);
-        font-size: var(--fluid-24-65);
+        font-size: var(--fluid-title);
+
+        span {
+            --shift-down: 0.05em;
+            --shift-up: -0.05em;
+
+            &:nth-child(2) {
+                transform: translateY(var(--shift-down));
+                display: inline-block;
+            }
+
+            &:nth-child(5) {
+                transform: translateY(var(--shift-down));
+                display: inline-block;
+            }
+
+            &:nth-child(8) {
+                transform: translateY(var(--shift-up));
+                display: inline-block;
+            }
+
+            &:nth-child(16) {
+                transform: translateY(var(--shift-up));
+                display: inline-block;
+            }
+
+            &:nth-child(18) {
+                transform: translateY(var(--shift-up));
+                display: inline-block;
+            }
+        }
     }
 
-    p {
-        font-weight: 800;
+    .HomeHeader__SubTitle {
+        font-weight: 490;
         text-transform: uppercase;
         font-size: 1.2rem;
-        color: var(--green);
-        letter-spacing: 0.05em;
+        color: var(--muted);
+        letter-spacing: 0.1em;
+        margin-block-end: 1rlh;
+    }
+
+    .HomeHeader__CurrentTrip {
+        --arrow-inset: 0.75em;
+        padding: 0.25rlh calc(var(--arrow-inset) + 1em);
+        background-color: var(--yellow);
+        width: min-content;
+        white-space: nowrap;
+        margin-inline: auto;
+        font-weight: 490;
+        color: var(--bg-color);
+
+        /* prettier-ignore */
+        clip-path: polygon(
+            0% 0%,
+            calc(100% - var(--arrow-inset)) 0%, 100% 50%, calc(100% - var(--arrow-inset)) 100%,
+            0% 100%, var(--arrow-inset) 50%
+        );
+
+        a {
+            font-weight: 700;
+        }
+        
+        time[title] {
+            text-decoration-color: color-mix(in oklab, var(--bg-color), transparent 50%);
+        }
     }
 }

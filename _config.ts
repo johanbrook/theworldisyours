@@ -46,6 +46,12 @@ site
     .data("type", "post", "/posts")
     .data("layout", "templates/post.vto", "/posts")
     .filter("to_slug", slug)
+    .filter("split_letters", (text: string) =>
+        text
+            .split("")
+            .map((str) => `<span>${str}</span>`)
+            .join(""),
+    )
     .process([".html"], (pages) => {
         for (const page of pages) {
             const document = page.document;

@@ -1,5 +1,8 @@
-title: "“The world is yours”"
+title: "The world is yours"
 subtitle: "Familjen Brooks reseblogg"
+current_trip:
+    trip: "Sydafrika"
+    emoji: "🇿🇦"
 
 image_transform_attr: "avif jpg 676@2"
 
