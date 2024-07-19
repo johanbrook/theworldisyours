@@ -1,3 +1,7 @@
+# REMOVE when shipped
+User-agent: *
+Disallow: /
+
 # Dark Visitors Robots.txt
 
 # AI Data Scraper
