@@ -25,10 +25,10 @@ layout: layouts/main.vto
         <nav class="PageNav">
             {{ set post = search.previousPage(url, "type=post") }}
             <p>
-                {{ if post }}
-                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="prev">← Föregående</a >
-            </p>
+            {{ if post }}
+                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="prev">← Föregående</a>
             {{ /if }}
+            </p>
             
             <p>
                 <a href="/all" class="btn">Visa alla inlägg</a>
@@ -37,7 +37,7 @@ layout: layouts/main.vto
             {{ set post = search.nextPage(url, "type=post") }}
             <p>
             {{ if post }}
-                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="next">Nästa →</a >
+                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="next">Nästa →</a>
             {{ /if }}
             </p>
         </nav>
