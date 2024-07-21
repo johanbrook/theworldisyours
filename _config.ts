@@ -9,6 +9,7 @@ import picture from "lume/plugins/picture.ts";
 import transformImages from "lume/plugins/transform_images.ts";
 import metas from "lume/plugins/metas.ts";
 import { slug } from "slug";
+import nesting from "npm:postcss-nesting";
 
 const site = lume({
     location: new URL("https://brook.city"),
@@ -41,7 +42,11 @@ site
             },
         }),
     )
-    .use(postcss())
+    .use(
+        postcss({
+            plugins: [nesting()],
+        }),
+    )
     .data("layout", "layouts/main.vto")
     .data("type", "post", "/posts")
     .data("layout", "templates/post.vto", "/posts")
