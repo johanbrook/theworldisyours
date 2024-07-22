@@ -15,9 +15,8 @@ const site = lume({
     location: new URL("https://brook.city"),
 });
 
-site
-    //
-    .copy("public", ".")
+site.copy("public", ".")
+    .ignore("README.md")
 
     .use(picture())
     .use(transformImages())
@@ -32,13 +31,22 @@ site
     .use(metas())
     .use(
         feed({
-            output: "/feed.xml",
+            output: ["feed.xml", "feed.json"],
             query: "type=post",
             info: {
                 title: "=title",
                 description: "=subtitle",
                 lang: "=metas.lang",
                 generator: false,
+            },
+            items: {
+                content(data) {
+                    // Make absolute URLs in feed HTML.
+                    return (data.children as string).replaceAll(
+                        /\s(href|src)="([^"]+)"/g,
+                        (_, attr, value) => ` ${attr}="${site.url(value, true)}"`,
+                    );
+                },
             },
         }),
     )
