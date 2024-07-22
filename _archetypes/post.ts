@@ -1,4 +1,4 @@
-import { format } from "std/datetime/format.ts";
+import { format } from "@std/datetime";
 
 export default function (title: string) {
     const slug = title.replace(/\s+/g, "-").toLowerCase();

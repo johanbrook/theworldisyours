@@ -1,5 +1,9 @@
-import { format } from "std/datetime/format.ts";
+import { format } from "@std/datetime";
 
-export function url(page) {
+export const type = "post";
+
+export const layout = "templates/post.vto";
+
+export function url(page: Lume.Page) {
     return `./${format(page.data.date, "yyyy-MM-dd")}-${page.data.slug}/`;
 }

@@ -1,8 +1,8 @@
 {
     "imports": {
+        "@std/datetime": "jsr:@std/datetime@^0.224.3",
         "lume/": "https://deno.land/x/lume@v2.2.1/",
         "lume/cms/": "https://cdn.jsdelivr.net/gh/lumeland/cms@v0.5.3/",
-        "std/": "https://deno.land/std@0.224.0/",
         "slug": "https://deno.land/x/slug@v1.1.0/mod.ts"
     },
     "tasks": {

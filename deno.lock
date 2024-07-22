@@ -12,6 +12,7 @@
       "jsr:@std/cli@^0.224.5": "jsr:@std/cli@0.224.5",
       "jsr:@std/collections@^1.0.0-rc.1": "jsr:@std/collections@1.0.1",
       "jsr:@std/crypto@0.224.0": "jsr:@std/crypto@0.224.0",
+      "jsr:@std/datetime@^0.224.3": "jsr:@std/datetime@0.224.3",
       "jsr:@std/encoding@0.224.3": "jsr:@std/encoding@0.224.3",
       "jsr:@std/encoding@1.0.0-rc.1": "jsr:@std/encoding@1.0.0-rc.1",
       "jsr:@std/encoding@^0.224.0": "jsr:@std/encoding@0.224.3",
@@ -106,6 +107,9 @@
           "jsr:@std/assert@^0.224.0",
           "jsr:@std/encoding@^0.224.0"
         ]
+      },
+      "@std/datetime@0.224.3": {
+        "integrity": "43197d0b2e00444fb169275b79a3e8fa506fd65c92398a207d71fd3e69b26c5b"
       },
       "@std/encoding@0.224.3": {
         "integrity": "5e861b6d81be5359fad4155e591acf17c0207b595112d1840998bb9f476dbdaf"
@@ -1485,5 +1489,10 @@
     "https://deno.land/x/xml@5.4.6/parse.ts": "70334eee74b738d8c4cf1f44b3a05834c3f0ba4dc4e09eea84a2286fd86bcf89",
     "https://deno.land/x/xml@5.4.6/stringify.ts": "b507f85351aef662892a0d79204e1e5e7ce234a10f91b058fc22f9ec72a55862",
     "https://deno.land/x/xml@5.4.6/wasm_xml_parser/wasm_xml_parser.js": "9db1be8ed275be5e3847f0b17d204ba40e5f50e5716adf6b821da6be39ea2097"
+  },
+  "workspace": {
+    "dependencies": [
+      "jsr:@std/datetime@^0.224.3"
+    ]
   }
 }

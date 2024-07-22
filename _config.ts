@@ -47,9 +47,6 @@ site
             plugins: [nesting()],
         }),
     )
-    .data("layout", "layouts/main.vto")
-    .data("type", "post", "/posts")
-    .data("layout", "templates/post.vto", "/posts")
     .filter("to_slug", slug)
     .filter("split_letters", (text: string) =>
         text

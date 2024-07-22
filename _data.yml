@@ -1,3 +1,4 @@
+layout: layouts/main.vto
 title: "The world is yours"
 subtitle: "Familjen Brooks reseblogg"
 current_trip:
@@ -5,7 +6,6 @@ current_trip:
     emoji: "🇿🇦"
 
 image_transform_attr: "avif jpg 676@2"
-
 metas:
     title: "=title"
     author: "=author"
