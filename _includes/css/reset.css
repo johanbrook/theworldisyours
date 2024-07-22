@@ -72,7 +72,7 @@
     list-style: none;
 }
 
-:where(img, svg, video, canvas, audio, iframe, embed, object) {
+:where(img, picture, svg, video, canvas, audio, iframe, embed, object) {
     display: block;
     vertical-align: middle;
 }

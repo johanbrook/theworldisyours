@@ -19,6 +19,8 @@
 
     /* @link https://utopia.fyi/clamp/calculator?a=320,760,40—72 */
     --fluid-title: clamp(2.5rem, 1.0455rem + 7.2727vi, 4.5rem);
+    /* @link https://utopia.fyi/clamp/calculator?a=320,760,24—50 */
+    --fluid-24-50: clamp(1.5rem, 0.3182rem + 5.9091vw, 3.125rem);
 }
 
 html {
@@ -30,7 +32,7 @@ body {
 }
 
 h1:not(:has(> a)) {
-    font-size: 3rem;
+    font-size: var(--fluid-24-50);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -135,7 +137,7 @@ h1:not(:has(> a)) {
         a {
             font-weight: 700;
         }
-        
+
         time[title] {
             text-decoration-color: color-mix(in oklab, var(--bg-color), transparent 50%);
         }

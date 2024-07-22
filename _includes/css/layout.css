@@ -1,12 +1,13 @@
 body {
+    --inset: 4%;
     margin-inline: auto;
-    padding-inline: 4%;
+    padding-inline: var(--inset);
     padding-block: 0.5rlh;
 
     display: grid;
     grid-template-rows: min-content 1fr min-content;
 
-    @media only screen and (min-width: 600px) {
+    @media only screen and (min-width: 900px) {
         max-width: var(--content-width);
         padding-block: 2rlh 1rlh;
     }
@@ -18,4 +19,12 @@ article > header {
 
 [role="contentinfo"] {
     margin-block: 2rlh 1rlh;
+}
+
+@media only screen and (max-width: 700px) {
+    article picture {
+        margin-inline-start: calc(var(--inset) * -1);
+        width: calc(100% + var(--inset) * 2);
+        max-inline-size: none;
+    }
 }
