@@ -12,8 +12,10 @@
 
         <link rel="alternate" type="application/rss+xml" title="Brook City posts feed (Atom)" href="/feed.xml">
         <link rel="alternate" type="application/feed+json" title="Brook City posts feed (JSON)" href="/feed.json">
+            
+        <link rel="me" href="https://fed.brid.gy/r/{{ "/" |> url(true) }}">
     </head>
-    <body>
+    <body {{ if home }}class="h-card"{{ /if }}>
         <nav aria-label="Main navigation" class="MainNav">
             <ul>
                 <li {{- if url == "/" }} aria-current="page"{{ /if }}>
@@ -61,7 +63,8 @@
         
         <footer role="contentinfo">
             <a href="https://open.spotify.com/track/7G3lxTsMfSx4yarMkfgnTC">♫ The World Is Yours</a> —
-            <a href="mailto:{{ email }}">{{ email }}</a> —
+            <a href="mailto:{{ email }}" class="u-email">{{ email }}</a> —
+            <a href="{{ "/" |> url(true) }}" class="u-url u-uid" rel="canonical">Home</a> —
             <a href="https://github.com/johanbrook/theworldisyours">Source</a>
         </footer>
     </body>
