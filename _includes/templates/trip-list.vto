@@ -1,7 +1,7 @@
-<ol class="ArchiveList h-feed">
+<ol class="ArchiveList">
     {{ for trip of results }}
-    <li class="h-entry">
-        <a class="u-url" href="{{ trip.title |> to_slug }}">{{ trip.title }}</a>
+    <li>
+        <a href="{{ trip.title |> to_slug }}">{{ trip.title }}</a>
         <span class="ArchiveList__Meta">{{ if current_trip.trip == trip.title }}★ {{ /if }}{{ trip.numPosts }} inlägg</span>
     </li>
     {{ /for }}

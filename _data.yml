@@ -1,6 +1,7 @@
 layout: layouts/main.vto
 title: "The world is yours"
 subtitle: "Familjen Brooks reseblogg"
+email: "hi@brook.city"
 current_trip:
     trip: "Sydafrika"
     emoji: "🇿🇦"

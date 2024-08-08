@@ -24,6 +24,10 @@
     text-align: right;
 }
 
+.tc {
+    text-align: center;
+}
+
 .spacing {
     margin-block-end: 1rlh;
 }

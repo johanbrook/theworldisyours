@@ -13,32 +13,16 @@ layout: layouts/main.vto
     {{ /if }}
 </header >
 
-<div class="PostList h-feed" transform-images="{{ image_transform_attr }}">
+<div class="PostList h-feed">
     {{ for post of results }}
-    <article class="Post h-entry">
-        <header>
-            <h1>
-                <a href="{{ post.url }}" class="u-url">{{ post.title }}</a>
-            </h1>
-            <div>
-                <p>
-                    <time datetime="{{ post.date |> date("ATOM") }}" class="dt-published" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
-                </p>
-                
-                <p>
-                    <span class="author">Av {{ post.author }}</span>
-                    {{ if post.trip }}
-                    <span class="muted">·</span> Om <a href="/trips/{{ post.trip |> to_slug }}">{{ post.trip }}</a>
-                    {{ /if }}
-                </p>
-            </div>
-        </header>
-
-        <div class="e-content">{{ post.content |> md }}</div>
-    </article>
+        {{ include "templates/post.vto" { post: post, permalink: true, nav: false } }}
     {{ /for }}
 </div>
 
 {{ if pagination.totalPages > 1 }}
     {{ include "templates/page-nav.vto" { pagination: pagination } }}
 {{ /if }}
+
+<p class="NoticeBox">
+    Vi är <span class="h-card"><a class="u-url u-uid" href="/by/johan">Johan</a> (<a href="https://johan.im" class="u-url" rel="me">johan.im</a>)</span> och <a class="h-card" href="/by/clara">Clara</a> Brook. Du kan läsa mer <a href="/about">om oss</a>.
+</p>

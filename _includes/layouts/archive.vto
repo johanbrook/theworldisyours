@@ -10,7 +10,9 @@ layout: layouts/main.vto
 
 <header class="split spacing">
     <h1>{{ title }}</h1>
-    <p class="muted tr detail">{{ results.length }}{{ if pagination }} / {{ pagination.totalResults }}{{ /if }}</p>
+    {{ if pagination?.totalPages > 1 }}
+        <p class="muted tr detail">{{ results.length }}{{ if pagination }} / {{ pagination.totalResults }}{{ /if }}</p>
+    {{ /if }}
 </header>
 
 {{ include template { results: results } }}

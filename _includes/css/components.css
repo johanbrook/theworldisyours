@@ -134,3 +134,10 @@
         }
     }
 }
+
+.NoticeBox {
+    text-align: center;
+    background-color: color-mix(in oklab, var(--muted), transparent 95%);
+    padding: 1rlh;
+    border-radius: 0.5em;
+}

@@ -1,45 +1,50 @@
----
-layout: layouts/main.vto
----
-
-<article class="Post" transform-images="{{ image_transform_attr }}">
+<article class="Post h-entry" transform-images="{{ image_transform_attr }}">
     <header>
-        <h1>{{ title }}</h1>
+        {{ if permalink }}
+            <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title }}</a></h1>
+        {{ else }}
+            <h1 class="p-name">{{ post.title }}</h1>
+        {{ /if }}
         <div>
             <p>
-                <time datetime="{{ date |> date("ATOM") }}" pubdate>{{ date |> date("HUMAN_DATE")}}</time>
+                <time class="dt-published" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
+                {{ if !permalink }}
+                    <span class="muted">·</span> <a href="{{ post.url }}" class="u-url u-uid">Link</a>
+                {{ /if }}
             </p>
             
             <p>
-                <span>Av {{ author }}</span>
-                {{ if trip }}
-                <span class="muted">·</span> Om <a href="/trips/{{ trip |> to_slug }}">{{ trip }}</a>
+                Av <a rel="author" class="p-author h-card" href="/by/{{ post.author |> to_slug }}">{{ post.author }}</a>
+                {{ if post.trip }}
+                <span class="muted">·</span> Om <a class="p-category" href="/trips/{{ post.trip |> to_slug }}">{{ post.trip }}</a>
                 {{ /if }}
             </p>
         </div>
     </header>
 
-    {{ content }}
+    <div class="e-content">{{ post.content }}</div>
 
-    <footer>
-        <nav class="PageNav">
-            {{ set post = search.previousPage(url, "type=post") }}
-            <p>
-            {{ if post }}
-                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="prev">← Föregående</a>
-            {{ /if }}
-            </p>
-            
-            <p>
-                <a href="/all" class="btn">Visa alla inlägg</a>
-            </p>
-            
-            {{ set post = search.nextPage(url, "type=post") }}
-            <p>
-            {{ if post }}
-                <a title="{{ post.title }}" href="{{ post.url }}" class="btn" rel="next">Nästa →</a>
-            {{ /if }}
-            </p>
-        </nav>
-    </footer>
+    {{ if nav }}
+        <footer>
+            <nav class="PageNav">
+                {{ set prev = search.previousPage(post.url, "type=post") }}
+                <p>
+                {{ if prev }}
+                    <a title="{{ prev.title }}" href="{{ prev.url }}" class="btn" rel="prev">← Föregående</a>
+                {{ /if }}
+                </p>
+                
+                <p>
+                    <a href="/all" class="btn">Visa alla inlägg</a>
+                </p>
+                
+                {{ set next = search.nextPage(post.url, "type=post") }}
+                <p>
+                {{ if next }}
+                    <a title="{{ next.title }}" href="{{ next.url }}" class="btn" rel="next">Nästa →</a>
+                {{ /if }}
+                </p>
+            </nav>
+        </footer>
+    {{ /if }}
 </article>

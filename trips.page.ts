@@ -9,7 +9,7 @@ export default function* ({ search, paginate }: Lume.Data) {
     yield {
         url: `/trips/`,
         title: "Resor",
-        template: "templates/trip-list.vto",
+        template: "templates/trip-list.vto", // overrides the exported var above!
         results: search.values<string>("trip").map((t) => ({
             title: t,
             numPosts: search.pages(`type=post trip=${t}`).length,

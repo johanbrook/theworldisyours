@@ -1,0 +1,8 @@
+<ol class="ArchiveList">
+    {{ for author of results }}
+    <li>
+        <a href="{{ author.title |> to_slug }}">{{ author.title }}</a>
+        <span class="ArchiveList__Meta">{{ author.numPosts }} inlägg</span>
+    </li>
+    {{ /for }}
+</ol>
