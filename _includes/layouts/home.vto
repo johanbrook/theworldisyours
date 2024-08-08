@@ -24,5 +24,7 @@ layout: layouts/main.vto
 {{ /if }}
 
 <p class="NoticeBox">
-    Vi är <span class="h-card"><a class="u-url u-uid" href="/by/johan">Johan</a> (<a href="https://johan.im" class="u-url" rel="me">johan.im</a>)</span> och <a class="h-card" href="/by/clara">Clara</a> Brook. Du kan läsa mer <a href="/about">om oss</a>.
+    Vi är Johan och Clara Brook. Du kan läsa mer <a href="/about">om oss</a>. <span hidden="from-humans" class="h-card">
+      <a class="p-name p-org u-url" href="{{ "/" |> url(true) }}">{{ subtitle }}</a>
+    </span>
 </p>
