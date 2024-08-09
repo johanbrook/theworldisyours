@@ -24,11 +24,16 @@ body {
 
 :where(code, kbd, pre) {
     font-family: var(--mono);
+    font-size-adjust: cap-height 0.65;
 }
 
 input,
 textarea {
     hanging-punctuation: none;
+}
+
+ul {
+    list-style-type: "-   ";
 }
 
 nav ul {

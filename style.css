@@ -6,7 +6,7 @@
 @import "css/defaults.css" layer(setup);
 @import "css/layout.css" layer(setup);
 
-@import "css/components.css" layer(setup);
+@import "css/components.css" layer(utils);
 @import "css/utils.css" layer(utils);
 
 @import "css/themes/south-africa.css" layer(theme);

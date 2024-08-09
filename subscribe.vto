@@ -1,0 +1,39 @@
+---
+title: Prenumerera
+layout: layouts/page.vto
+---
+
+<ul class="ArchiveList">
+    <li>
+        <p>
+            <a class="btn" href="/feed.xml">RSS</a>
+        </p>
+        <p class="muted">
+            <code>{{ "/feed.xml" |> url(true) }}</code>
+        </p>
+    </li>
+    <li>
+        <p>
+            <a class="btn" href="/feed.json">JSON</a>
+        </p>
+        <p class="muted">
+            <code>{{ "/feed.json" |> url(true) }}</code>
+        </p>
+    </li>
+    <li>
+        <p>
+            <a class="btn" href="https://fed.brid.gy/web/brook.city">Fediverse/ActivityPub</a>
+        </p>
+        <p class="muted">
+            <code>@brook.city@brook.city</code>
+        </p>
+    </li>
+    <li>
+        <p>
+            <a class="btn" href="https://bsky.app/profile/brook.city.web.brid.gy">Bluesky</a>
+        </p>
+        <p class="muted">
+            <code>@brook.city.web.brid.gy</code>
+        </p>
+    </li>
+</ul>
