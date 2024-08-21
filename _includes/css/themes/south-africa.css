@@ -17,10 +17,11 @@
     --accent: oklch(68.4% 0.201 28.59);
     --muted: color-mix(in oklab, var(--light), black 52%);
 
-    /* @link https://utopia.fyi/clamp/calculator?a=320,760,40—72 */
-    --fluid-title: clamp(2.5rem, 1.0455rem + 7.2727vi, 4.5rem);
-    /* @link https://utopia.fyi/clamp/calculator?a=320,760,24—50 */
-    --fluid-24-50: clamp(1.5rem, 0.3182rem + 5.9091vw, 3.125rem);
+    /* @link https://utopia.fyi/clamp/calculator/?a=320,760,36—72 */
+    --fluid-title: clamp(2.25rem, 0.6136rem + 8.1818vw, 4.5rem);
+    /* @link https://utopia.fyi/clamp/calculator?a=390,647,18—24 */
+    --fluid-subtitle: clamp(1.125rem, 0.9432rem + 0.9091vw, 1.375rem);
+    --fluid-article-title: clamp(1.5rem, 0.3182rem + 5.9091vw, 3.125rem);
 }
 
 html {
@@ -32,7 +33,7 @@ body {
 }
 
 h1:not(:has(> a)) {
-    font-size: var(--fluid-24-50);
+    font-size: var(--fluid-article-title);
 }
 
 @media (prefers-color-scheme: dark) {
@@ -75,7 +76,10 @@ h1:not(:has(> a)) {
 .HomeHeader {
     h1 {
         font-family: Bayon, var(--sans);
+        margin-block-end: 0;
         font-size: var(--fluid-title);
+        font-weight: 580;
+        letter-spacing: -0.01em;
 
         span {
             --shift-down: 0.05em;
@@ -109,12 +113,12 @@ h1:not(:has(> a)) {
     }
 
     .HomeHeader__SubTitle {
-        font-weight: 490;
         text-transform: uppercase;
-        font-size: 1.2rem;
-        color: var(--muted);
+        color: var(--green);
         letter-spacing: 0.1em;
         margin-block-end: 1rlh;
+        font-size: var(--fluid-subtitle);
+        font-weight: 480;
     }
 
     .HomeHeader__CurrentTrip {

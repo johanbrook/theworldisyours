@@ -6,6 +6,7 @@ body {
 
     display: grid;
     grid-template-rows: min-content 1fr min-content;
+    row-gap: 2rlh;
 
     @media only screen and (min-width: 900px) {
         max-width: var(--content-width);
@@ -13,12 +14,8 @@ body {
     }
 }
 
-article > header {
-    margin-block-end: 0.5rlh;
-}
-
-[role="contentinfo"] {
-    margin-block: 2rlh 1rlh;
+main > header {
+    margin-block: 1rlh 3rlh;
 }
 
 @media only screen and (max-width: 700px) {
@@ -26,5 +23,13 @@ article > header {
         margin-inline-start: calc(var(--inset) * -1);
         width: calc(100% + var(--inset) * 2);
         max-inline-size: none;
+    }
+}
+
+@layer utils {
+    .Post {
+        display: grid;
+        grid-template-rows: min-content 1fr min-content;
+        row-gap: 1rlh;
     }
 }

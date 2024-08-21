@@ -21,10 +21,3 @@
         --muted: #aaa;
     }
 }
-
-/* @link https://utopia.fyi/clamp/calculator?a=390,647,24—50|16—27 */
-
-:root {
-    --fluid-24-50: clamp(1.5rem, -0.966rem + 10.1167vi, 3.125rem);
-    --fluid-16-27: clamp(1rem, -0.0433rem + 4.2802vi, 1.6875rem);
-}
