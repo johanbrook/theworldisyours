@@ -4,6 +4,9 @@
         <title>{{ title }} — {{ subtitle }}</title>
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
+            
+        <link rel="preconnect" href="https://gc.zgo.at">
+        <link rel="preconnect" href="https://theworldisyours.goatcounter.com">
         
         <meta name="theme-color" content="rgb(2 119 73)" media="(prefers-color-scheme: light)">
         <meta name="theme-color" content="oklch(25% 0.03 79.54)" media="(prefers-color-scheme: dark)">
@@ -15,6 +18,8 @@
             
         <link rel="me" href="https://fed.brid.gy/r/{{ "/" |> url(true) }}"">
         <link rel="author" type="application/activity+json" href="https://fed.brid.gy/r/{{ "/" |> url(true) }}">
+        
+        {{ include "templates/analytics.vto" }}
     </head>
     <body {{ if home }}class="h-card"{{ /if }}>
         {{ include "templates/nav.vto" }}
