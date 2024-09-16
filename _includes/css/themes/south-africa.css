@@ -1,67 +1,91 @@
 /* South Africa theme */
 
 @font-face {
-    font-family: Bayon;
+    font-family: Tanker;
     src:
-        url("/fonts/bayon-regular-webfont.woff2") format("woff2"),
-        url("/fonts/bayon-regular-webfont.woff") format("woff");
-    font-weight: normal;
+        url("/fonts/Tanker-Regular.woff2") format("woff2"),
+        url("/fonts/Tanker-Regular.woff") format("woff"),
+        url("/fonts/Tanker-Regular.ttf") format("truetype");
+    font-weight: 400;
+    font-display: swap;
     font-style: normal;
 }
 
 :root {
     --light: oklch(95.1% 0.0522 79.54);
+    --dark: oklch(18% 0.03 79.54);
     --green: oklch(57.06% 0.163 157.95);
     --yellow: rgb(255 184 29);
 
     --accent: oklch(68.4% 0.201 28.59);
-    --muted: color-mix(in oklab, var(--light), black 52%);
+    --muted: color-mix(in oklab, var(--light), black 40%);
+
+    --bg-color: var(--light);
+    --body-color: white;
+    --text-color: var(--dark);
 
     /* @link https://utopia.fyi/clamp/calculator/?a=320,760,36—72 */
     --fluid-title: clamp(2.25rem, 0.6136rem + 8.1818vw, 4.5rem);
     /* @link https://utopia.fyi/clamp/calculator?a=390,647,18—24 */
     --fluid-subtitle: clamp(1.125rem, 0.9432rem + 0.9091vw, 1.375rem);
     --fluid-article-title: clamp(1.5rem, 0.3182rem + 5.9091vw, 3.125rem);
+
+    --step--2: clamp(0.6331rem, 0.7157rem + -0.1065vw, 0.6944rem);
+    --step--1: clamp(0.8331rem, 0.8294rem + 0.0185vw, 0.8438rem);
+    --step-0: clamp(1rem, 0.9565rem + 0.4174vw, 1.25rem);
+    --step-1: clamp(1.2rem, 1.0959rem + 0.5207vw, 1.4994rem);
+    --step-2: clamp(1.44rem, 1.2457rem + 0.9717vw, 1.9988rem);
+    --step-3: clamp(1.7281rem, 1.4025rem + 1.6283vw, 2.6644rem);
+    --step-4: clamp(2.0738rem, 1.5596rem + 2.5707vw, 3.5519rem);
+    --step-5: clamp(2.4881rem, 1.7066rem + 3.9076vw, 4.735rem);
 }
 
 html {
-    background-color: var(--light);
+    background-color: var(--bg-color);
+    color: var(--text-color);
 }
 
 body {
-    background-color: white;
+    background-color: var(--body-color);
 }
 
-h1:not(:has(> a)) {
-    font-size: var(--fluid-article-title);
+:where(h1, h2, h3, h4, h5, h6) {
+    font-family: Tanker, var(--sans);
+    font-weight: 400;
+
+    a:not(:hover) {
+        text-decoration: none;
+    }
+}
+
+h1 {
+    font-size: var(--step-4);
+}
+
+h2 {
+    font-size: var(--step-3);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        --bg-color: oklch(25% 0.03 79.54);
+        --bg-color: var(--dark);
+        --body-color: revert-layer;
+        --text-color: var(--light);
         --muted: color-mix(in oklab, var(--light), var(--bg-color) 20%);
         --green: oklch(85.59% 0.183 157.95);
-    }
-
-    html {
-        background-color: var(--bg-color);
-        color: var(--light);
+        --yellow: oklch(68.53% 0.131 79.54);
     }
 
     body {
-        background-color: revert-layer;
+        background-color: var(--body-color);
     }
 
-    :where(h1, h2, h3, h4, h5, h6) {
-        :where(&, & > a) {
-            color: white;
-        }
+    .HomeHeader h1 {
+        color: white;
     }
-}
 
-@media (prefers-color-scheme: light) {
-    article > header h1 {
-        font-weight: 630;
+    a:not([aria-current="page"] a):hover {
+        color: white;
     }
 }
 
@@ -75,7 +99,6 @@ h1:not(:has(> a)) {
 
 .HomeHeader {
     h1 {
-        font-family: Bayon, var(--sans);
         margin-block-end: 0;
         font-size: var(--fluid-title);
         font-weight: 580;
@@ -129,7 +152,11 @@ h1:not(:has(> a)) {
         white-space: nowrap;
         margin-inline: auto;
         font-weight: 490;
-        color: var(--bg-color);
+        color: var(--text-color);
+
+        @media (prefers-color-scheme: dark) {
+            background-color: oklch(from var(--dark) calc(l + 0.2) calc(c + 0.1) h);
+        }
 
         /* prettier-ignore */
         clip-path: polygon(
@@ -140,10 +167,37 @@ h1:not(:has(> a)) {
 
         a {
             font-weight: 700;
+
+            &:hover {
+                color: inherit;
+            }
         }
 
         time[title] {
             text-decoration-color: color-mix(in oklab, var(--bg-color), transparent 50%);
         }
+    }
+}
+
+.PostList header h1 {
+    font-size: var(--step-2);
+}
+
+@media (prefers-color-scheme: dark) {
+    .Post header > div a:hover {
+        color: var(--light);
+    }
+}
+
+.Post.single header {
+    margin-block-end: 2rlh;
+
+    h1 {
+        font-size: var(--step-4);
+    }
+
+    :where(h1, div) {
+        --angle: -3deg;
+        transform: rotate(var(--angle)) skew(var(--angle));
     }
 }

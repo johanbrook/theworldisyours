@@ -1,4 +1,4 @@
-<article class="Post h-entry" transform-images="{{ image_transform_attr }}">
+<article class="Post h-entry {{ if singular }}single{{ /if }}" transform-images="{{ image_transform_attr }}">
     <header>
         {{ if permalink }}
             <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title }}</a></h1>
@@ -7,7 +7,7 @@
         {{ /if }}
         <div>
             <p>
-                <time class="dt-published" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
+                <time class="dt-published" title="{{ post.date |> date("HUMAN_DATETIME")}}" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
                 {{ if !permalink }}
                     <span class="muted">·</span> <a href="{{ post.url }}" class="u-url u-uid">Link</a>
                 {{ /if }}

@@ -6,7 +6,7 @@
         "slug": "https://deno.land/x/slug@v1.1.0/mod.ts"
     },
     "tasks": {
-        "lume": "echo \"import 'lume/cli.ts'\" | deno run -A -",
+        "lume": "echo \"import 'lume/cli.ts'\" | deno run --unstable-temporal -A -",
         "build": "deno task lume",
         "serve": "deno task lume -s",
         "cms": "deno task lume cms",

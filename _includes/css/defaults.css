@@ -10,7 +10,7 @@ html {
 
     /* 3. Larger on larger screens. */
     @media only screen and (min-width: 600px) {
-        font-size: 112.5%;
+        font-size: 125%;
     }
 }
 
@@ -75,11 +75,6 @@ a {
         text-decoration-thickness: 2px;
         text-decoration-color: var(--accent);
     }
-}
-
-h1 {
-    font-weight: 550;
-    font-size: 2rem;
 }
 
 @media (hover: hover) {
