@@ -121,3 +121,15 @@
     padding: 1rlh;
     border-radius: 0.5em;
 }
+
+.HomeHeader {
+    h1 sup {
+        font-size: 0.3em;
+        margin-left: 0.5em;
+        
+        a:hover {
+            color: var(--yellow);
+            text-decoration: none;
+        }
+    }
+}
