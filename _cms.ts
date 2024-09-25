@@ -71,10 +71,27 @@ cms.collection("Inlägg", storageOf("posts/*.md"), [
         },
     },
     {
+        name: "description",
+        label: "Summering/beskrivning",
+        type: "text",
+        attributes: {
+            required: true,
+        },
+    },
+    {
         name: "author",
         label: "Författare",
         type: "select",
         options: ["Johan", "Clara"],
+        attributes: {
+            required: true,
+        },
+    },
+    {
+        name: "trip",
+        label: "Resa",
+        type: "select",
+        options: ["Sydafrika"],
         attributes: {
             required: true,
         },
