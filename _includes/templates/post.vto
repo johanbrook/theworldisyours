@@ -22,7 +22,10 @@
         </div>
     </header>
 
-    <div class="e-content">{{ post.content |> md }}</div>
+    {{ if post.description }}
+    <div class="p-summary visually-hidden">{{ post.description }}</div>
+    {{ /if }}
+    <div class="e-content prose">{{ post.content |> md }}</div>
 
     {{ if nav }}
         <footer>

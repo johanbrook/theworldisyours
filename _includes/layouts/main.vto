@@ -2,6 +2,7 @@
 <html lang="{{ metas.lang }}">
     <head>
         <title>{{ title }} — {{ subtitle }}</title>
+        {{ if description }}<meta name="description" content="{{ description }}">{{ /if }}
         
         <meta name="viewport" content="width=device-width, initial-scale=1">
             
@@ -29,7 +30,7 @@
         
         <footer role="contentinfo">
             <a name="ref-1" href="https://open.spotify.com/track/7G3lxTsMfSx4yarMkfgnTC" class="u-url">♫ The World Is Yours</a> —
-            <a href="mailto:{{ email }}" class="u-email">{{ email }}</a> —
+            <a name="email" href="mailto:{{ email }}" class="u-email">{{ email }}</a> —
             <a href="{{ "/" |> url(true) }}" class="u-url u-uid" rel="canonical">Home</a> —
             <a href="https://github.com/johanbrook/theworldisyours">Source</a>
         </footer>
