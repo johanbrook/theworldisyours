@@ -57,8 +57,12 @@ nav {
     }
 }
 
-article :not(header *):not(nav > *):where(h1, h2, h3, h4, p, blockquote, hr, figure):not(:last-child) {
-    margin-block-end: 1rlh;
+article :not(header *):not(nav > *):where(h1, h2, h3, h4, p, blockquote, hr, figure, ul, ol):not(:last-child) {
+    margin-block: 0 1rlh;
+}
+
+article footer {
+    margin-block-start: 2rlh;
 }
 
 [role="contentinfo"] {
@@ -85,4 +89,12 @@ a {
         text-underline-offset: 0.3ex;
         text-decoration-thickness: 2px;
     }
+}
+
+hr {
+    background-color: color-mix(in oklab, var(--muted), transparent 75%);
+    border: 0;
+    height: 1px;
+    max-width: 75%;
+    margin-inline: auto;
 }

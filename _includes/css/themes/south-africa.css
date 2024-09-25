@@ -24,6 +24,9 @@
     --body-color: white;
     --text-color: var(--dark);
 
+    --font-title: Tanker, Bahnschrift, "DIN Alternate", "Franklin Gothic Medium", "Nimbus Sans Narrow",
+        sans-serif-condensed, sans-serif;
+
     /* @link https://utopia.fyi/clamp/calculator/?a=320,760,36—72 */
     --fluid-title: clamp(2.25rem, 0.6136rem + 8.1818vw, 4.5rem);
     /* @link https://utopia.fyi/clamp/calculator?a=390,647,18—24 */
@@ -49,8 +52,8 @@ body {
     background-color: var(--body-color);
 }
 
-:where(h1, h2, h3, h4, h5, h6) {
-    font-family: Tanker, var(--sans);
+:where(h1, h2) {
+    font-family: var(--font-title);
     font-weight: 400;
 
     a:not(:hover) {
@@ -64,6 +67,10 @@ h1 {
 
 h2 {
     font-size: var(--step-3);
+}
+
+h3 {
+    font-weight: 620;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -136,12 +143,14 @@ h2 {
     }
 
     .HomeHeader__SubTitle {
+        font-family: var(--sans-rounded);
         text-transform: uppercase;
         color: var(--green);
-        letter-spacing: 0.1em;
+        letter-spacing: 0.05em;
         margin-block-end: 1rlh;
         font-size: var(--fluid-subtitle);
-        font-weight: 480;
+        font-weight: 550;
+        text-shadow: color-mix(in oklab, var(--green), transparent 60%) 0 0 15px;
     }
 
     .HomeHeader__CurrentTrip {
@@ -189,15 +198,21 @@ h2 {
     }
 }
 
-.Post.single header {
-    margin-block-end: 2rlh;
+.Post.single {
+    header {
+        margin-block-end: 2rlh;
 
-    h1 {
-        font-size: var(--step-4);
+        h1 {
+            font-size: var(--step-4);
+        }
     }
 
-    :where(h1, div) {
+    :where(header h1, header div, .prose h2) {
         --angle: -3deg;
         transform: rotate(var(--angle)) skew(var(--angle));
+    }
+
+    .prose h2 {
+        margin-block-end: 2rlh;
     }
 }
