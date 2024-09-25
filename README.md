@@ -1,5 +1,13 @@
 # The Brook family's travel blog
 
+## Posting
+
+Create a new post:
+
+```bash
+deno task lume new <post-slug>
+```
+
 ## Dev
 
 **Build**
