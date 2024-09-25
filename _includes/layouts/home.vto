@@ -8,9 +8,31 @@ home: true
     <p class="HomeHeader__SubTitle p-org">{{ subtitle }}</p>
 </header >
 
-<div class="PostList h-feed">
+<div class="PostList h-feed stack" style="--spacing: 3rlh">
     {{ for post of results }}
-        {{ include "templates/post.vto" { post: post, permalink: true, nav: false } }}
+        <article class="h-entry">
+            <header class="spacing">
+                <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title }}</a></h1>
+                <div class="split">
+                    <p>
+                        <time class="dt-published" title="{{ post.date |> date("HUMAN_DATETIME")}}" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
+                    </p>
+                    
+                    <p>
+                        Av <a rel="author" class="p-author h-card" href="/by/{{ post.author |> to_slug }}">{{ post.author }}</a>
+                        {{ if post.trip }}
+                        <span class="muted">·</span> Om <a class="p-category" href="/trips/{{ post.trip |> to_slug }}">{{ post.trip }}</a>
+                        {{ /if }}
+                    </p>
+                </div>
+            </header>
+            
+            {{ if post.description }}
+            <div class="p-summary">
+                <p>{{ post.description }} <a href="{{ post.url }}" class="u-url u-uid">Läs mer →</a></p>
+            </div>
+            {{ /if }}
+        </article>
     {{ /for }}
 </div>
 

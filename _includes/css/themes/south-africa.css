@@ -180,7 +180,7 @@ h2 {
 }
 
 .PostList header h1 {
-    font-size: var(--step-2);
+    font-size: var(--step-3);
 }
 
 @media (prefers-color-scheme: dark) {

@@ -49,3 +49,7 @@
     display: inline-block;
     font-size: 0.9em;
 }
+
+.stack > * + * {
+    margin-block-start: var(--spacing, 1rlh);
+}
