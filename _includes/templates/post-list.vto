@@ -1,7 +1,13 @@
 <ol class="ArchiveList h-feed">
     {{ for post of results }}
     <li class="h-entry">
-        <a class="u-url u-uid p-name" href="{{ post.url }}">{{ post.title }}</a>
+        <a class="u-url u-uid p-name" href="{{ post.url }}">
+            {{ if is_micro(post) }}
+                {{ post.date |> date("HUMAN_DATE") }}
+            {{ else }}
+                {{ post.title }}
+            {{ /if }}
+        </a>
         <time class="dt-published ArchiveList__Meta" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
         {{ if post.description }}
         <p class="muted detail p-summary">{{ post.description }}</p>

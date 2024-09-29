@@ -55,6 +55,7 @@ site.copy("public", ".")
             plugins: [nesting()],
         }),
     )
+    .data("is_micro", (data: Record<string, unknown>) => !data.slug)
     .filter("to_slug", slug)
     .filter("split_letters", (text: string) =>
         text

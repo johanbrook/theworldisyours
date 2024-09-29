@@ -1,9 +1,13 @@
 <article class="Post h-entry {{ if singular }}single{{ /if }}" transform-images="{{ image_transform_attr }}">
     <header>
         {{ if permalink }}
-            <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title }}</a></h1>
+            <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title || post.date }}</a></h1>
         {{ else }}
-            <h1 class="p-name">{{ post.title }}</h1>
+            {{ if is_micro(post) }}
+                <h1>{{ post.date |> date("HUMAN_DATE") }}</h1>
+            {{ else }}
+                <h1 class="p-name">{{ post.title || post.date }}</h1>
+            {{ /if }}
         {{ /if }}
         <div>
             <p>

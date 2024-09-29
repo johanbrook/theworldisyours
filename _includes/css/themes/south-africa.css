@@ -107,7 +107,7 @@ h3 {
 .HomeHeader {
     h1 {
         margin-block-end: 0;
-        font-size: var(--fluid-title);
+        font-size: var(--step-5);
         font-weight: 580;
         letter-spacing: -0.01em;
 
@@ -188,10 +188,6 @@ h3 {
     }
 }
 
-.PostList header h1 {
-    font-size: var(--step-3);
-}
-
 @media (prefers-color-scheme: dark) {
     .Post header > div a:hover {
         color: var(--light);
@@ -214,5 +210,13 @@ h3 {
 
     .prose h2 {
         margin-block-end: 2rlh;
+    }
+}
+
+.Micro {
+    header h1 {
+        font-family: var(--sans);
+        font-weight: 550;
+        font-size: var(--step-0);
     }
 }

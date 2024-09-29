@@ -142,12 +142,15 @@
 
 .prose {
     strong {
-        color: color-mix(in oklab, currentColor, white 40%);
         text-decoration: underline;
         text-decoration-thickness: 2px;
         text-decoration-style: wavy;
         text-decoration-color: color-mix(in oklab, var(--yellow), transparent 40%);
         text-underline-offset: 0.3ex;
+
+        @supports (light-dark(black, white)) {
+            color: light-dark(black, color-mix(in oklab, currentColor, white 40%));
+        }
     }
 
     :where(ol, ul) {
@@ -167,5 +170,16 @@
 
     * + :where(h1, h2) {
         margin-block-start: 2rlh;
+    }
+}
+
+.Gallery {
+    display: grid;
+    gap: 12px;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: masonry;
+
+    > * {
+        align-self: start;
     }
 }

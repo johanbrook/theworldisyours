@@ -4,16 +4,20 @@ home: true
 ---
 
 <header class="HomeHeader">
-    <h1 class="p-name">{{ title |> split_letters }}<sup><a href="#ref-1">1</a></sup></h1>
+    <h1 class="p-name">{{ title |> split_letters }}</h1>
     <p class="HomeHeader__SubTitle p-org">{{ subtitle }}</p>
 </header >
 
-<div class="PostList h-feed stack" style="--spacing: 3rlh">
+<div class="h-feed stack" style="--spacing: 3rlh" transform-images="{{ image_transform_attr }}">
     {{ for post of results }}
-        <article class="h-entry">
+        <article class="h-entry{{ if is_micro(post) }} Micro{{ /if }}">
             <header class="spacing">
-                <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title }}</a></h1>
-                <div class="split">
+                {{ if is_micro(post) }}
+                    <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.date |> date("HUMAN_DATE") }}</a></h1>
+                {{ else }}
+                    <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.title }}</a></h1>
+                {{ /if }}
+                <div class="split{{ if is_micro(post) }} visually-hidden{{ /if }}">
                     <p>
                         <time class="dt-published" title="{{ post.date |> date("HUMAN_DATETIME")}}" datetime="{{ post.date |> date("ATOM") }}" pubdate>{{ post.date |> date("HUMAN_DATE")}}</time>
                     </p>
@@ -27,7 +31,11 @@ home: true
                 </div>
             </header>
             
-            {{ if post.description }}
+            {{ if is_micro(post) }}
+            <div class="e-content prose">
+                {{ post.content |> md }}
+            </div>
+            {{ else if post.description }}
             <div class="p-summary">
                 <p>{{ post.description }} <a href="{{ post.url }}" class="u-url u-uid">Läs mer →</a></p>
             </div>
