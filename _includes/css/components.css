@@ -175,7 +175,7 @@
 
 .Gallery {
     display: grid;
-    gap: 12px;
+    gap: min(1vw, 8px);
     grid-template-columns: repeat(2, 1fr);
     grid-template-rows: masonry;
 

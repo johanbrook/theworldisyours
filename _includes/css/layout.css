@@ -19,7 +19,7 @@ main > header {
 }
 
 @media only screen and (max-width: 700px) {
-    article picture {
+    article picture:not(.Gallery > *) {
         margin-inline-start: calc(var(--inset) * -1);
         width: calc(100% + var(--inset) * 2);
         max-inline-size: none;
