@@ -8,7 +8,7 @@ home: true
     <p class="HomeHeader__SubTitle p-org">{{ subtitle }}</p>
 </header >
 
-<div class="h-feed stack" style="--spacing: 3rlh" transform-images="{{ image_transform_attr }}">
+<div class="h-feed stack" style="--spacing: 5rlh" transform-images="{{ image_transform_attr }}">
     {{ for post of results }}
         <article class="h-entry{{ if is_micro(post) }} Micro{{ /if }}">
             <header class="spacing">

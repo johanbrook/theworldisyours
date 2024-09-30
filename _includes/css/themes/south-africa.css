@@ -80,7 +80,7 @@ h3 {
         --text-color: var(--light);
         --muted: color-mix(in oklab, var(--light), var(--bg-color) 20%);
         --green: oklch(85.59% 0.183 157.95);
-        --yellow: oklch(68.53% 0.131 79.54);
+        --yellow: oklch(76.41% 0.1795 84.93);
     }
 
     body {
@@ -219,4 +219,11 @@ h3 {
         font-weight: 550;
         font-size: var(--step-0);
     }
+}
+
+.Notice {
+    padding: 1rlh;
+    border: 1px solid var(--yellow);
+    border-left-width: 0.5em;
+    margin-block-end: 1rlh;
 }
