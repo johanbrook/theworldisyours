@@ -171,6 +171,20 @@
     * + :where(h1, h2) {
         margin-block-start: 2rlh;
     }
+
+    @media (min-width: 1040px) {
+        picture:has(img[alt*="wide"]) {
+            margin-block: 3rlh;
+            margin-inline-start: -15%;
+            width: 130%;
+            max-inline-size: none;
+
+            img {
+                max-inline-size: none;
+                inline-size: 100%;
+            }
+        }
+    }
 }
 
 .Gallery {

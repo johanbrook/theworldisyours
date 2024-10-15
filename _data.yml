@@ -7,7 +7,7 @@ current_trip:
     trip: "Sydafrika"
     emoji: "🇿🇦"
 
-image_transform_attr: "avif jpg 676@2"
+image_transform_attr: "avif jpg 1040@2"
 metas:
     title: "=title"
     author: "=author"
