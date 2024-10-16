@@ -5,13 +5,12 @@ home: true
 
 <header class="HomeHeader">
     <h1 class="p-name">{{ title |> split_letters }}</h1>
-    <p class="HomeHeader__SubTitle p-org">{{ subtitle }}</p>
 </header >
 
-<div class="h-feed stack" style="--spacing: 5rlh" transform-images="{{ image_transform_attr }}">
+<div class="h-feed stack" style="--spacing: 2rlh" transform-images="{{ image_transform_attr }}">
     {{ for post of results }}
-        <article class="h-entry{{ if is_micro(post) }} Micro{{ /if }}">
-            <header class="spacing">
+        <article class="Post h-entry{{ if is_micro(post) }} Micro{{ /if }}">
+            <header>
                 {{ if is_micro(post) }}
                     <h1><a href="{{ post.url }}" class="u-url p-name u-uid">{{ post.date |> date("HUMAN_DATE") }}</a></h1>
                 {{ else }}

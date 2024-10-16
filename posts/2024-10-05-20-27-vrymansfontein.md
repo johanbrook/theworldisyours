@@ -4,11 +4,11 @@ date: 2024-10-05T20:27:22.387Z
 slug: vrymansfontein-llandudno
 author: Johan
 trip: Sydafrika
-description: Vi hänger på stränder och åker till Vrymansfontein
+description: Vi hänger på stränder och åker till Vrymansfontein.
 tags:
-    - vin
-    - restaurang
+    - mat
     - utflykt
+    - strand
 ---
 
 ## Saunder's Rock Beach
