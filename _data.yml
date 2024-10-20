@@ -9,8 +9,9 @@ current_trip:
 
 image_transform_attr: "avif jpg 1040@2"
 metas:
+    type: blog
     title: "=title"
     author: "=author"
-    description: "=subtitle"
+    description: "=description"
     lang: sv
-    site: "“The world is yours”"
+    site: "Brook.city"

@@ -12,6 +12,10 @@ export default function (title: string) {
             title,
             slug,
             content: "<!-- Content here -->",
+            author: "Johan",
+            trip: "Sydafrika",
+            description: "",
+            tags: ["foo"],
         },
     };
 }
