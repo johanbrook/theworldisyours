@@ -112,9 +112,12 @@
 
 .NoticeBox {
     text-align: center;
+    font-weight: 550;
     background-color: color-mix(in oklab, var(--muted), transparent 95%);
     padding: 1rlh;
     border-radius: 0.5em;
+    text-wrap: pretty;
+    margin-block-end: 1rlh;
 }
 
 .HomeHeader {
@@ -172,16 +175,21 @@
         margin-block-start: 2rlh;
     }
 
-    @media (min-width: 1040px) {
+    @media (min-width: 1024px) {
         picture:has(img[alt*="wide"]) {
+            --inset: 40%;
             margin-block: 3rlh;
-            margin-inline-start: -15%;
-            width: 130%;
+            margin-inline-start: calc(var(--inset) * -1);
+            width: calc(100% + var(--inset) * 2);
             max-inline-size: none;
 
             img {
                 max-inline-size: none;
                 inline-size: 100%;
+            }
+            
+            @media (max-width: 1300px) {
+                --inset: 20%;
             }
 
             @media (prefers-color-scheme: light) {
