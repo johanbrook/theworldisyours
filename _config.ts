@@ -63,6 +63,15 @@ site.copy("public", ".")
             .map((str) => `<span>${str}</span>`)
             .join(""),
     )
+    .preprocess([".md"], (pages) => {
+        for (const page of pages) {
+            if (!page.src.path.startsWith("/posts")) continue;
+
+            const cover = `/uploads/${page.data.date.toISOString().split("T").at(0)}/cover.jpg`;
+            // We can't check with Deno.lstat() that these files actually exists yet, but whatevs.
+            page.data.cover = cover;
+        }
+    })
     .process([".html"], (pages) => {
         for (const page of pages) {
             const document = page.document;

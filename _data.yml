@@ -15,3 +15,4 @@ metas:
     description: "=description"
     lang: sv
     site: "Brook.city"
+    image: "=cover"

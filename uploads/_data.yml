@@ -1,0 +1,4 @@
+transformImages:
+    resize: [1200]
+    format: jpg
+    matches: cover
