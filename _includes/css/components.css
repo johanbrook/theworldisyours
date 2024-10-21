@@ -110,16 +110,6 @@
     }
 }
 
-.NoticeBox {
-    text-align: center;
-    font-weight: 550;
-    background-color: color-mix(in oklab, var(--muted), transparent 95%);
-    padding: 1rlh;
-    border-radius: 0.5em;
-    text-wrap: pretty;
-    margin-block-end: 1rlh;
-}
-
 .HomeHeader {
     h1 sup {
         font-size: 0.3em;
@@ -144,6 +134,17 @@
 }
 
 .prose {
+    font-family: var(--serif);
+
+    @media only screen and (min-width: 800px) {
+        font-size: 1.2rem;
+    }
+
+    @media (prefers-color-scheme: dark) {
+        letter-spacing: 0.005em;
+        word-spacing: 0.025em;
+    }
+
     strong {
         text-decoration: underline;
         text-decoration-thickness: 2px;
@@ -187,7 +188,7 @@
                 max-inline-size: none;
                 inline-size: 100%;
             }
-            
+
             @media (max-width: 1300px) {
                 --inset: 20%;
             }

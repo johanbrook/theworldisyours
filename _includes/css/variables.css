@@ -3,7 +3,7 @@
 
     --leading: 1.6;
     --sans: system-ui, sans-serif;
-    --serif: ui-serif, "Iowan Old Style", "Palatino Linotype", "URW Palladio L", P052, serif;
+    --serif: Charter, 'Bitstream Charter', 'Sitka Text', Cambria, serif;
     --mono: ui-monospace, monospace;
     --sans-rounded: ui-rounded, "Hiragino Maru Gothic ProN", Quicksand, Comfortaa, Manjari, "Arial Rounded MT",
         "Arial Rounded MT Bold", Calibri, source-sans-pro, sans-serif;
@@ -12,7 +12,7 @@
 
     /* LAYOUT */
 
-    --content-width: 72ch;
+    --content-width: 75ch;
 
     /* COLOURS */
 

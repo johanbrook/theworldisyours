@@ -70,6 +70,7 @@ h2 {
 }
 
 h3 {
+    font-size: var(--step-2);
     font-weight: 620;
 }
 
@@ -212,16 +213,16 @@ h3 {
         margin-block-end: 2rlh;
 
         h1 {
-            font-size: var(--step-4);
+            font-size: var(--step-5);
         }
     }
 
-    :where(header h1, header div, .prose h2) {
+    :where(header h1, header div, .prose h1, .prose h2) {
         --angle: -3deg;
         transform: rotate(var(--angle)) skew(var(--angle));
     }
 
-    .prose h2 {
+    :where(.prose h1, .prose h2) {
         margin-block-end: 2rlh;
     }
 }
@@ -229,6 +230,12 @@ h3 {
 .Notice {
     padding: 1rlh;
     border: 1px solid var(--yellow);
+    background-color: color-mix(in oklab, var(--yellow), transparent 95%);
     border-left-width: 0.5em;
+    color: color-mix(in oklab, var(--yellow), white 60%);
+    border-radius: 4px;
     margin-block-end: 1rlh;
+    text-wrap: pretty;
+    font-weight: 520;
+    font-family: var(--sans-rounded);
 }
